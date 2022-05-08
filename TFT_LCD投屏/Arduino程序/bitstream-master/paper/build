@@ -1,0 +1,25 @@
+#!/bin/bash 
+
+# Generate pdf and html version of the paper
+
+# Note: the JOSS generation process is different.
+# It requires a bibtex file; 
+# since pandoc-citeproc doesn't *output* bibtex,
+# it needs to be manually generated with Zotero,
+# and *then* the ids updated (manually), since
+# Zotero does not preserve them.
+
+pandoc-citeproc -j bibliography.yaml > bibliography.json 
+
+pandoc --standalone \
+       --smart \
+       --bibliography=bibliography.json \
+       -o paper.html \
+       paper.md
+
+pandoc --standalone \
+       --smart \
+       --bibliography=bibliography.json \
+       -o paper.pdf \
+       paper.md
+

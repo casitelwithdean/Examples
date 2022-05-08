@@ -1,0 +1,925 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Built-in Types - BitStream</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#built-in-types" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="BitStream" class="md-header-nav__button md-logo" aria-label="BitStream">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            BitStream
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Built-in Types
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/boisgera/bitstream/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bitstream
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BitStream" class="md-nav__button md-logo" aria-label="BitStream">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    BitStream
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/boisgera/bitstream/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bitstream
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../examples/" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Built-in Types
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Built-in Types
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bools" class="md-nav__link">
+    Bools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitstreams" class="md-nav__link">
+    BitStreams
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integers" class="md-nav__link">
+    Integers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floating-point-numbers" class="md-nav__link">
+    Floating-Point Numbers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../custom/" class="md-nav__link">
+      Custom Types
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../snapshots/" class="md-nav__link">
+      Snapshots
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../API/" class="md-nav__link">
+      API Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bools" class="md-nav__link">
+    Bools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitstreams" class="md-nav__link">
+    BitStreams
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integers" class="md-nav__link">
+    Integers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floating-point-numbers" class="md-nav__link">
+    Floating-Point Numbers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/boisgera/bitstream/edit/master/mkdocs/types.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="built-in-types">Built-in Types<a class="headerlink" href="#built-in-types" title="Permanent link">&para;</a></h1>
+<p>Bitstream reads and writes work out-of-the-box for many Python data types.
+It is also tightly integrated with <a href="http://www.numpy.org/">NumPy</a>,
+since this is the library of choice to deals with arrays of numeric data.</p>
+<pre><code>&gt;&gt;&gt; import bitstream
+&gt;&gt;&gt; from bitstream import BitStream
+&gt;&gt;&gt; from numpy import *
+</code></pre>
+<h2 id="bools">Bools<a class="headerlink" href="#bools" title="Permanent link">&para;</a></h2>
+<p>Write single bits to a bitstream with the arguments <code>True</code> and <code>False</code>:</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(False, bool)
+&gt;&gt;&gt; stream.write(True , bool)
+&gt;&gt;&gt; stream
+01
+</code></pre>
+<p>Read them back in the same order with</p>
+<pre><code>&gt;&gt;&gt; stream.read(bool)
+False
+&gt;&gt;&gt; stream.read(bool)
+True
+&gt;&gt;&gt; stream
+&lt;BLANKLINE&gt;
+</code></pre>
+<p>Write multiple bits at once with lists of bools:</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write([], bool)
+&gt;&gt;&gt; stream
+&lt;BLANKLINE&gt;
+&gt;&gt;&gt; stream.write([False], bool)
+&gt;&gt;&gt; stream.write([True] , bool)
+&gt;&gt;&gt; stream
+01
+&gt;&gt;&gt; stream.write([False, True], bool)
+&gt;&gt;&gt; stream
+0101
+</code></pre>
+<p>Alternatively, specify the data type <code>bool</code> as a a keyword argument:</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(False, type=bool)
+&gt;&gt;&gt; stream.write(True , type=bool)
+&gt;&gt;&gt; stream
+01
+</code></pre>
+<p>For single bools or lists of bools, this type information is optional:</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(False)
+&gt;&gt;&gt; stream.write(True)
+&gt;&gt;&gt; stream.write([])
+&gt;&gt;&gt; stream.write([False])
+&gt;&gt;&gt; stream.write([True])
+&gt;&gt;&gt; stream.write([False, True])
+&gt;&gt;&gt; stream
+010101
+</code></pre>
+<p>To read one boolean from a stream, do</p>
+<pre><code>&gt;&gt;&gt; stream.read(bool)
+False
+&gt;&gt;&gt; stream
+10101
+</code></pre>
+<p>and to read several booleans, use the second method argument</p>
+<pre><code>&gt;&gt;&gt; stream.read(bool, 2)
+[True, False]
+&gt;&gt;&gt; stream
+101
+</code></pre>
+<p>Since the booleans are returned in a list when the second argument 
+differs from the default value (which is <code>None</code>), 
+<code>stream.read(bool, 1)</code> is not same as <code>stream.read(bool)</code>:</p>
+<pre><code>&gt;&gt;&gt; copy = stream.copy()
+&gt;&gt;&gt; stream.read(bool, 1)
+[True]
+&gt;&gt;&gt; copy.read(bool)
+True
+</code></pre>
+<hr />
+<p>Numpy <code>bool_</code> scalars or one-dimensional arrays can be used instead:</p>
+<pre><code>&gt;&gt;&gt; bool_ # doctest: +ELLIPSIS
+&lt;... 'numpy.bool_'&gt;
+&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(bool_(False)  , bool)
+&gt;&gt;&gt; stream.write(bool_(True)   , bool)
+&gt;&gt;&gt; stream
+01
+
+&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; empty = array([], dtype=bool)
+&gt;&gt;&gt; stream.write(empty, bool)
+&gt;&gt;&gt; stream
+&lt;BLANKLINE&gt;
+&gt;&gt;&gt; stream.write(array([False]), bool)
+&gt;&gt;&gt; stream.write(array([True]) , bool)
+&gt;&gt;&gt; stream.write(array([False, True]), bool)
+&gt;&gt;&gt; stream
+0101
+</code></pre>
+<p>For such data, the type information is also optional:</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(bool_(False))
+&gt;&gt;&gt; stream.write(bool_(True))
+&gt;&gt;&gt; stream.write(array([], dtype=bool))
+&gt;&gt;&gt; stream.write(array([False]))
+&gt;&gt;&gt; stream.write(array([True]))
+&gt;&gt;&gt; stream.write(array([False, True]))
+&gt;&gt;&gt; stream
+010101
+</code></pre>
+<p>Actually, many more types can be used as booleans 
+when the type information is explicit.
+For example, Python and Numpy numeric types are valid arguments: 
+zero is considered false and nonzero numbers are considered true.</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(0.0, bool)
+&gt;&gt;&gt; stream.write(1.0, bool)
+&gt;&gt;&gt; stream.write(pi , bool)
+&gt;&gt;&gt; stream.write(float64(0.0), bool)
+&gt;&gt;&gt; stream.write(float64(1.0), bool)
+&gt;&gt;&gt; stream.write(float64(pi) , bool)
+&gt;&gt;&gt; stream
+011011
+</code></pre>
+<p>Strings are also valid arguments, with a boolean value of <code>True</code> unless
+they are empty.
+One-dimensional lists and numpy arrays are considered holders of 
+multiple data, each of which is converted to bool.</p>
+<pre><code>&gt;&gt;&gt; bool(b"")
+False
+&gt;&gt;&gt; bool(b" ")
+True
+&gt;&gt;&gt; bool(b"A")
+True
+&gt;&gt;&gt; bool(b"AAA")
+True
+
+&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(b"", bool)
+&gt;&gt;&gt; stream.write(b" ", bool)
+&gt;&gt;&gt; stream.write(b"A", bool)
+&gt;&gt;&gt; stream.write(b"AAA", bool)
+&gt;&gt;&gt; stream
+0111
+&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write([b"", b" " , b"A", b"AAA"], bool)
+&gt;&gt;&gt; stream
+0111
+&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(array([b"", b" " , b"A", b"AAA"]), bool)
+&gt;&gt;&gt; stream
+0111
+</code></pre>
+<p>Any other sequence (strings, tuples, lists nested in lists, etc.) 
+is considered as a single datum.</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(    (), bool)
+&gt;&gt;&gt; stream.write(  (0,), bool)
+&gt;&gt;&gt; stream.write((0, 0), bool)
+&gt;&gt;&gt; stream
+011
+
+&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write([[], [0], [0, 0]], bool)
+&gt;&gt;&gt; stream
+011
+</code></pre>
+<p>More generally, arbitrary custom "bool-like" instances, 
+which have a <code>__bool__</code> method (or <code>__nonzero__</code> for Python 2) 
+to handle the conversion to boolean, can also be used:</p>
+<pre><code>&gt;&gt;&gt; class BoolLike(object):
+...     def __init__(self, value):
+...         self.value = bool(value)
+...     def __bool__(self):
+...         return self.value
+...     __nonzero__ = __bool__
+&gt;&gt;&gt; false = BoolLike(False)
+&gt;&gt;&gt; true = BoolLike(True)
+
+&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(false, bool)
+&gt;&gt;&gt; stream.write(true, bool)
+&gt;&gt;&gt; stream.write([false, true], bool)
+&gt;&gt;&gt; stream
+0101
+</code></pre>
+<h2 id="bitstreams">BitStreams<a class="headerlink" href="#bitstreams" title="Permanent link">&para;</a></h2>
+<p>A lists of bool is not the most efficient way to represent a binary stream.
+The best type is ... an instance of <code>BitStream</code> of course! </p>
+<p>Consider the stream</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(8 * [True], bool)
+&gt;&gt;&gt; stream
+11111111
+</code></pre>
+<p>To read 2 bits out of <code>stream</code> as a bitstream, use</p>
+<pre><code>&gt;&gt;&gt; stream.read(BitStream, 2)
+11
+</code></pre>
+<p>Since this is a common use case, the <code>BitStream</code> type is assumed by default:</p>
+<pre><code>&gt;&gt;&gt; new_stream = stream.read(n=2)
+&gt;&gt;&gt; type(new_stream) is BitStream
+True
+&gt;&gt;&gt; new_stream
+11
+</code></pre>
+<p>The simpler code below also works:</p>
+<pre><code>&gt;&gt;&gt; new_stream = stream.read(2)
+&gt;&gt;&gt; type(new_stream) is BitStream
+True
+&gt;&gt;&gt; new_stream
+11
+</code></pre>
+<p>When the number of items to read is also specified (<code>n=None</code>),
+the read empties the stream:</p>
+<pre><code>&gt;&gt;&gt; stream.read()
+11
+&gt;&gt;&gt; stream
+&lt;BLANKLINE&gt;
+</code></pre>
+<h2 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h2>
+<p>In Python 2.7, strings are the structure of choice to represent 
+bytes in memory.
+Their type is <code>str</code> (or equivalently <code>bytes</code> which is an alias).
+Fortunately, it's straightforward to convert strings to 
+bitstreams: create a stream from the string <code>"ABCD"</code> with</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream(b"ABCD")
+</code></pre>
+<p>To be totally explicit, the code above is equivalent to:</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(b"ABCDE", bytes)
+</code></pre>
+<p>Now, the content of the stream is</p>
+<pre><code>&gt;&gt;&gt; stream
+0100000101000010010000110100010001000101
+</code></pre>
+<p>It is the binary representation
+of the ASCII codes of the string characters,
+as unsigned 8-bit integers
+(see <a href="#integers">Integers</a> for more details):</p>
+<pre><code>&gt;&gt;&gt; char_codes = [ord(char) for char in "ABCDE"]
+&gt;&gt;&gt; char_codes
+[65, 66, 67, 68, 69]
+&gt;&gt;&gt; stream == BitStream(char_codes, uint8)
+True
+</code></pre>
+<p>There is no "single character" type in Python: 
+characters are represented as bytes of length 1.
+To read one or several characters from a bitstream, 
+use the <code>read</code> method with the <code>bytes</code> type:</p>
+<pre><code>&gt;&gt;&gt; stream.read(bytes, 1) # doctest: +BYTES
+b'A'
+&gt;&gt;&gt; stream.read(bytes, 2) # doctest: +BYTES
+b'BC'
+</code></pre>
+<p>Without an explicit number of characters, the bitstream is emptied</p>
+<pre><code>&gt;&gt;&gt; stream.read(bytes) # doctest: +BYTES
+b'DE'
+</code></pre>
+<p>but that works only if the bitstream contains a multiple of 8 bits.</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream(42 * [True])
+&gt;&gt;&gt; try:
+...     stream.read(bytes)
+... except bitstream.ReadError:
+...     print("42 is not a multiple of 8")
+42 is not a multiple of 8
+</code></pre>
+<p>To accept up to seven trailing bits instead, use the more explicit code:</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream(42 * [True])
+&gt;&gt;&gt; n = len(stream) // 8
+&gt;&gt;&gt; n
+5
+&gt;&gt;&gt; stream.read(bytes, n) # doctest: +BYTES
+b'\xff\xff\xff\xff\xff'
+&gt;&gt;&gt; stream
+11
+</code></pre>
+<h2 id="integers">Integers<a class="headerlink" href="#integers" title="Permanent link">&para;</a></h2>
+<p>First, let's clear something out: 
+since Python integers can be of arbitrary size 
+and there is not a unique convenient and commonly accepted
+representation for such integers<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>,
+you cannot create a bitstream from Python integers by default.</p>
+<pre><code>&gt;&gt;&gt; BitStream(1)
+Traceback (most recent call last):
+...
+TypeError: unsupported type 'int'.
+
+&gt;&gt;&gt; BitStream(2**100) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: unsupported type ...
+
+&gt;&gt;&gt; BitStream(b"A").read(int)
+Traceback (most recent call last):
+...
+TypeError: unsupported type 'int'.
+</code></pre>
+<p>You need to specify somehow an integer type that determines 
+what binary representation should be used. For example,
+to represent <code>1</code> as an unsigned 8bit integer:</p>
+<pre><code>&gt;&gt;&gt; BitStream(1, uint8)
+00000001
+&gt;&gt;&gt; BitStream(uint8(1))
+00000001
+</code></pre>
+<p>For integer sequences, there are even more ways 
+to specify the integer type:</p>
+<pre><code>&gt;&gt;&gt; BitStream([1,2,3], uint8)
+000000010000001000000011
+&gt;&gt;&gt; BitStream([uint8(1), uint8(2), uint8(3)])
+000000010000001000000011
+&gt;&gt;&gt; BitStream(array([1, 2, 3], dtype=uint8))
+000000010000001000000011
+</code></pre>
+<p>Bitstream supports six integer types from numpy:</p>
+<ul>
+<li>
+<p>unsigned integers: <code>uint8</code>, <code>uint16</code>, <code>uint32</code></p>
+</li>
+<li>
+<p>signed integers: <code>int8</code>, <code>int16</code>, <code>int32</code></p>
+</li>
+</ul>
+<p>The representation of unsigned integers is based on their 
+decomposition as powers of 2. For example, since</p>
+<pre><code> &gt;&gt;&gt; 13 ==  1*2**3 + 1*2**2 + 0*2**1 + 1*2**0
+ True
+</code></pre>
+<p>we have</p>
+<pre><code> &gt;&gt;&gt; BitStream(13, uint8)
+ 00001101
+</code></pre>
+<p>In this scheme, only unsigned integers in the range 0-255 can be represented 
+as 8bit integers. 
+Out-of-bounds integers are accepted, 
+but mapped to the correct range by a modulo <code>2**8</code> operation. 
+Numpy follows this convention</p>
+<pre><code> &gt;&gt;&gt; 500 % 2**8
+ 244
+ &gt;&gt;&gt; uint8(500)
+ 244
+</code></pre>
+<p>and so does bitstream</p>
+<pre><code> &gt;&gt;&gt; BitStream(500, uint8)
+ 11110100
+ &gt;&gt;&gt; BitStream(244, uint8)
+ 11110100
+ &gt;&gt;&gt; BitStream(500, uint8).read(uint8)
+ 244
+</code></pre>
+<p>The representation of 16bit and 32bit unsigned integers 
+follows the same approach</p>
+<pre><code>&gt;&gt;&gt; BitStream(2**10, uint16)
+0000010000000000
+&gt;&gt;&gt; BitStream(uint16(2**10))
+0000010000000000
+</code></pre>
+<p>For the readers that know about this, we use the <a href="https://en.wikipedia.org/wiki/Endianness">big-endian</a> representation by default for multi-byte
+integers. If you want to use the little-endian convention instead,
+NumPy provides the method <code>newbyteorder</code> for this:</p>
+<pre><code>&gt;&gt;&gt; BitStream(uint16(2**10).newbyteorder())
+0000000000000100
+</code></pre>
+<p>Finally, for signed integers, we use the <a href="https://en.wikipedia.org/wiki/Signed_number_representations">two's complement</a> representation</p>
+<pre><code>&gt;&gt;&gt; BitStream(0, int8)
+00000000
+&gt;&gt;&gt; BitStream(1, int8)
+00000001
+&gt;&gt;&gt; BitStream(-1, int8)
+11111111
+</code></pre>
+<h2 id="floating-point-numbers">Floating-Point Numbers<a class="headerlink" href="#floating-point-numbers" title="Permanent link">&para;</a></h2>
+<p>Bitstream supports natively the IEE754 double-precision floating-point numbers,
+which have a well-defined binary representation (see e.g. <a href="https://orion.math.iastate.edu/alex/502/doc/p5-goldberg.pdf">What every computer scientist should know about binary arithmetic</a>).</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(0.0)
+&gt;&gt;&gt; stream.write([1.0, 2.0, 3.0])
+&gt;&gt;&gt; stream.write(arange(4.0, 10.0))
+&gt;&gt;&gt; len(stream)
+640
+&gt;&gt;&gt; output = stream.read(float, 10)
+&gt;&gt;&gt; type(output) # doctest: +ELLIPSIS
+&lt;... 'numpy.ndarray'&gt;
+&gt;&gt;&gt; all(output == arange(10.0))
+True
+</code></pre>
+<p>Python built-in <code>float</code> type and NumPy <code>float64</code> types may be used interchangeably:</p>
+<pre><code>&gt;&gt;&gt; BitStream(1.0) == BitStream(1.0, float) == BitStream(1.0, float64)
+True
+</code></pre>
+<p>Scalar, lists and arrays of floats are supported:</p>
+<pre><code>&gt;&gt;&gt; BitStream(1.0) == BitStream([1.0]) == BitStream(ones(1))
+True
+</code></pre>
+<p>The byte order is big endian:</p>
+<pre><code>&gt;&gt;&gt; import struct
+&gt;&gt;&gt; PI_BE = struct.pack(b"&gt;d", pi)
+&gt;&gt;&gt; PI_BE # doctest: +BYTES
+b'@\t!\xfbTD-\x18'
+&gt;&gt;&gt; BitStream(pi) == BitStream(PI_BE)
+True
+</code></pre>
+<p>The NumPy <code>newbyteorder</code> method should be used beforeand
+(on a <code>float64</code> or an array of floats) 
+to get a little-endian representation instead.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Why not simply use the binary decomposition of integers? 
+For example, since</p>
+<pre><code>&gt;&gt;&gt; 13 == 1*2**3 + 1*2**2 + 0*2**1 + 1*2**0
+True
+</code></pre>
+<p>you may be tempted to not represent <code>13</code> as </p>
+<pre><code>&gt;&gt;&gt; BitStream([True, True, False, True])
+1101
+</code></pre>
+<p>But this scheme is ambiguous if we consider 
+sequences of integers: <code>1101</code> could represent the integer
+<code>13</code> but also <code>[1,5]</code> or <code>[3,1]</code> or <code>[3,0,1]</code>, etc.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../installation/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Installation
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../custom/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Custom Types
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

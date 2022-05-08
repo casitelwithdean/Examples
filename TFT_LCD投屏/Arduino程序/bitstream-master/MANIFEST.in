@@ -1,0 +1,8 @@
+include src/bitstream.pxd
+include src/bitstream.pyx
+include src/bitstream.c
+
+include benchmark.py
+
+exclude setup.cfg
+

@@ -1,0 +1,729 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Snapshots - BitStream</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#snapshots" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="BitStream" class="md-header-nav__button md-logo" aria-label="BitStream">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            BitStream
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Snapshots
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/boisgera/bitstream/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bitstream
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BitStream" class="md-nav__button md-logo" aria-label="BitStream">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    BitStream
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/boisgera/bitstream/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bitstream
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../examples/" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../types/" class="md-nav__link">
+      Built-in Types
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../custom/" class="md-nav__link">
+      Custom Types
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Snapshots
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Snapshots
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lookahead" class="md-nav__link">
+    Lookahead
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception-safety" class="md-nav__link">
+    Exception Safety
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-snapshots" class="md-nav__link">
+    Multiple Snapshots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    How does it Work?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../API/" class="md-nav__link">
+      API Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lookahead" class="md-nav__link">
+    Lookahead
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception-safety" class="md-nav__link">
+    Exception Safety
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-snapshots" class="md-nav__link">
+    Multiple Snapshots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    How does it Work?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/boisgera/bitstream/edit/master/mkdocs/snapshots.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="snapshots">Snapshots<a class="headerlink" href="#snapshots" title="Permanent link">&para;</a></h1>
+<p>A stream is a simple model to deal with binary data,
+but sometimes you need more: you want to perform some lookahead without 
+changing the stream or you want to try some read/write operations 
+but go back to the initial state if they fail. 
+At this stage, you probably have copies of streams 
+everywhere and the stream interface seems very cumbersome.</p>
+<p>Therefore, we provide snapshots, a simple solution for these
+use cases that doesn't require copies of streams:
+you can save the state of a stream at any 
+stage in a sequence of read/write operations and restore 
+any such state later if you need it.</p>
+<h2 id="lookahead">Lookahead<a class="headerlink" href="#lookahead" title="Permanent link">&para;</a></h2>
+<p>The type of binary data can usually be identified by a specific header
+coded in its first few bytes.
+For example, <a href="https://en.wikipedia.org/wiki/WAV">WAVE</a> audio can be detected with the function:</p>
+<pre><code>&gt;&gt;&gt; from bitstream import BitStream, ReadError
+
+&gt;&gt;&gt; def is_wave(stream):
+...    try:
+...        riff = stream.read(bytes, 4)
+...        _ = stream.read(bytes, 4)
+...        wave = stream.read(bytes, 4)
+...        return (riff == b"RIFF") and (wave == b"WAVE")
+...    except ReadError:
+...        return False
+</code></pre>
+<p>The contents of an empty single-channel 44.1 kHz WAVE audio file are for example</p>
+<pre><code>&gt;&gt;&gt; wave = b'RIFF$\x00\x00\x00WAVEfmt \x10\x00\x00\x00\x01\x00\x01\x00D\xac\x00\x00\x88X\x01\x00\x02\x00\x10\x00data\x00\x00\x00\x00'
+</code></pre>
+<p>The function <code>is_wave</code> above works as expected at first</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream(wave)
+&gt;&gt;&gt; is_wave(stream)
+True
+</code></pre>
+<p>but another attempt gives an incorrect answer:</p>
+<pre><code>&gt;&gt;&gt; is_wave(stream)
+False
+</code></pre>
+<p>The explanation is simple: to identify the header of a WAVE file,
+we need to consume the first 12 bytes in the stream. 
+Since this header is missing from the stream afterwards, 
+the new attempt fails.</p>
+<p>To solve this issue, 
+it's possible to make <code>is_wave</code> perform a (partial) copy of the stream 
+and perform the check on the copy, leaving the initial 
+stream unchanged. 
+However in general this approach may be cumbersome;
+copies should also be avoided when possible for performance reasons.</p>
+<p>Bitstream also supports snapshots, 
+a better way to deal with lookaheads.
+With them you can:</p>
+<ul>
+<li>
+<p>save the state of a stream at any time, </p>
+</li>
+<li>
+<p>perform arbitrary operations on it and then </p>
+</li>
+<li>
+<p>restore its initial state.</p>
+</li>
+</ul>
+<p>The implementation of <code>is_wave</code> that does this is plain;
+we just make sure that whatever happens 
+(even an error in the processing) 
+the original state of the stream is restored at the end. </p>
+<pre><code>&gt;&gt;&gt; def is_wave(stream):
+...     snapshot = stream.save()
+...     try:
+...         riff = stream.read(bytes, 4)
+...         _ = stream.read(bytes, 4)
+...         wave = stream.read(bytes, 4)
+...         return (riff == b"RIFF") and (wave == b"WAVE")
+...     except ReadError:
+...         return False
+...     finally:
+...         stream.restore(snapshot)
+</code></pre>
+<p>This version works as expected:</p>
+<pre><code>&gt;&gt;&gt; wave = b'RIFF$\x00\x00\x00WAVEfmt \x10\x00\x00\x00\x01\x00\x01\x00D\xac\x00\x00\x88X\x01\x00\x02\x00\x10\x00data\x00\x00\x00\x00'
+&gt;&gt;&gt; stream = BitStream(wave)
+&gt;&gt;&gt; copy = stream.copy()
+&gt;&gt;&gt; is_wave(stream)
+True
+&gt;&gt;&gt; stream == copy
+True
+&gt;&gt;&gt; is_wave(stream)
+True
+</code></pre>
+<h2 id="exception-safety">Exception Safety<a class="headerlink" href="#exception-safety" title="Permanent link">&para;</a></h2>
+<p>Consider the toy DNA reader below:</p>
+<pre><code>&gt;&gt;&gt; def DNA_read(stream, n=1):
+...     DNA_bases = b"ACGT"
+...     bases = []
+...     for i in range(n):
+...         base = stream.read(bytes, 1)
+...         if base not in DNA_bases:
+...             error = "invalid base {0!r}".format(base)
+...             raise ReadError(error)
+...         else:
+...             bases.append(base)
+...     return b"".join(bases)
+</code></pre>
+<p>It reads DNA sequences represented as bytes, either 
+<code>b'A'</code>, <code>b'C'</code>, <code>b'G'</code> or <code>b'T'</code>:</p>
+<pre><code>&gt;&gt;&gt; dna = BitStream(b"GATA")
+&gt;&gt;&gt; DNA_read(dna, 4) # doctest: +BYTES
+b'GATA'
+</code></pre>
+<p>If there is a <code>'U'</code> in the sequence, this is an error since
+the <a href="https://en.wikipedia.org/wiki/Nucleobase">uracil base</a> 
+is only found in RNA.</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream(b"GAUTA") # invalid DNA sequence
+</code></pre>
+<p>The DNA reader correctly rejects the code</p>
+<pre><code>&gt;&gt;&gt; try:
+...     DNA_read(stream, 4)
+... except ReadError:
+...     print("Read error")
+Read error
+</code></pre>
+<p>but the initial stream is partially consumed in the process:</p>
+<pre><code>&gt;&gt;&gt; stream.read(bytes) # doctest: +BYTES
+b'TA'
+</code></pre>
+<p>This implementation therefore only provides some basic exception safety.
+A reader that preserves the original value of the stream when an error
+occurs would provide <a href="https://en.wikipedia.org/wiki/Exception_safety">strong exception safety</a> instead.
+With snapshots, the modifications required to support this 
+are plain: we simply restore the original stream whenever an
+error occurs</p>
+<pre><code>&gt;&gt;&gt; def DNA_read(stream, n=1):
+...     DNA_bases = b"ACGT"
+...     snapshot = stream.save()
+...     try:
+...         bases = []
+...         for i in range(n):
+...             base = stream.read(bytes, 1)
+...             if base not in DNA_bases:
+...                 error = "invalid base {0!r}".format(base)
+...                 raise ReadError(error)
+...             else:
+...                 bases.append(base)
+...         return "".join(bases)
+...     except:
+...         stream.restore(snapshot)
+...         raise
+</code></pre>
+<p>With this new version, reading an invalid DNA code still 
+raises an exception</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream(b"GAUTA") # invalid DNA sequence
+&gt;&gt;&gt; try:
+...     DNA_read(stream, 4)
+... except ReadError:
+...     print("Read error")
+Read error
+</code></pre>
+<p>but now the original stream is intact</p>
+<pre><code>&gt;&gt;&gt; stream.read(bytes) # doctest: +BYTES
+b'GAUTA'
+</code></pre>
+<h2 id="multiple-snapshots">Multiple Snapshots<a class="headerlink" href="#multiple-snapshots" title="Permanent link">&para;</a></h2>
+<p>You can create snapshots of a stream at any stage between read/write operations.
+Multiple snapshots enable for example the implemention a hierarchy of readers 
+or writers that provide strong exception safety at every level.</p>
+<p>However arbitrary sequences of save and restore are not allowed:
+when a given snapshot is restored, the snapshots that were created 
+between the snapshot creation and before its restoration are forgotten.
+In other words, saves and restores can only be applied in reverse order.
+Of course it is perfectly valid to skip some of the restores in the process:
+you can always create additional snapshots and never use them.</p>
+<p>For example, you can take two snapshots <code>s0</code> then <code>s1</code> of a stream
+between write operations</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; s0 = stream.save()
+&gt;&gt;&gt; stream.write(b"A")
+&gt;&gt;&gt; s1 = stream.save()
+&gt;&gt;&gt; stream.write(b"B")
+&gt;&gt;&gt; stream == BitStream(b"AB")
+True
+</code></pre>
+<p>restore <code>s1</code></p>
+<pre><code>&gt;&gt;&gt; stream.restore(s1)
+&gt;&gt;&gt; stream == BitStream(b"A")
+True
+</code></pre>
+<p>and then <code>s0</code></p>
+<pre><code>&gt;&gt;&gt; stream.restore(s0)
+&gt;&gt;&gt; stream == BitStream(b"")
+True
+</code></pre>
+<p>You can also make the same snapshots </p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; s0 = stream.save()
+&gt;&gt;&gt; stream.write(b"A")
+&gt;&gt;&gt; s1 = stream.save()
+&gt;&gt;&gt; stream.write(b"B")
+&gt;&gt;&gt; stream == BitStream(b"AB")
+True
+</code></pre>
+<p>and directly restore <code>s0</code></p>
+<pre><code>&gt;&gt;&gt; stream.restore(s0)
+&gt;&gt;&gt; stream == BitStream(b"")
+True
+</code></pre>
+<p>but then <code>s1</code> cannot be used anymore</p>
+<pre><code>&gt;&gt;&gt; stream.restore(s1) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+ValueError: ...
+</code></pre>
+<h2 id="how-does-it-work">How does it Work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
+<p>The main (private) attributes of a <code>BitStream</code> structure are:</p>
+<ul>
+<li>
+<p>an array of bytes: the raw data</p>
+</li>
+<li>
+<p>read and write cursors: they locate the beginning and the end 
+    of the stream in the bytes array.</p>
+</li>
+</ul>
+<p>When you read data from a stream, 
+you shift the read cursor but the 
+corresponding data is <em>not</em> deleted<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> -- its is merely not accessible.
+The <code>State</code> structure stores values 
+of the read and write cursors; the call <code>state = stream.save()</code> produces 
+a snapshot of the current cursor locations and
+<code>stream.restore(state)</code> restores them.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>This is why the memory consumption increases if you write a lot
+of data into a stream, <em>even if you read it!</em> The solution in this case is to
+copy the stream and discard the original since the copy method discards 
+write history.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../custom/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Custom Types
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../API/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                API Reference
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

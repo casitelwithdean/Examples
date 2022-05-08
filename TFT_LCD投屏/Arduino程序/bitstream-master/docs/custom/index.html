@@ -1,0 +1,763 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Custom Types - BitStream</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#custom-types" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="BitStream" class="md-header-nav__button md-logo" aria-label="BitStream">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            BitStream
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Custom Types
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/boisgera/bitstream/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bitstream
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BitStream" class="md-nav__button md-logo" aria-label="BitStream">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    BitStream
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/boisgera/bitstream/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bitstream
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../examples/" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../types/" class="md-nav__link">
+      Built-in Types
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Custom Types
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Custom Types
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registration" class="md-nav__link">
+    Registration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factories" class="md-nav__link">
+    Factories
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../snapshots/" class="md-nav__link">
+      Snapshots
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../API/" class="md-nav__link">
+      API Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registration" class="md-nav__link">
+    Registration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factories" class="md-nav__link">
+    Factories
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/boisgera/bitstream/edit/master/mkdocs/custom.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="custom-types">Custom Types<a class="headerlink" href="#custom-types" title="Permanent link">&para;</a></h1>
+<p>This section explains how to deal with a data type or a binary coding 
+that bitstream does not support natively: how to define bitstream 
+writer and reader functions and register them so that your custom
+types behave like native ones.</p>
+<pre><code>&gt;&gt;&gt; import sys
+&gt;&gt;&gt; import bitstream
+&gt;&gt;&gt; from bitstream import BitStream
+</code></pre>
+<p>We use the example of representation of unsigned integers 
+as binary numbers;
+out of the box, bitstream only supports unsigned integers of fixed size 
+(refer to <a href="../types/#integers">Built-in Types / Integers</a> for details).</p>
+<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+<p>For every type of data that we want bitstream to support, 
+we need to specify at least one writer function that
+encodes the data as a bitstream and one reader function
+that decodes data out of bitstreams.</p>
+<p>The signature of writers is</p>
+<pre><code>def writer(stream, data)
+</code></pre>
+<p>where</p>
+<ol>
+<li>
+<p><code>stream</code> is a <code>BitStream</code> instance,</p>
+</li>
+<li>
+<p>the type of <code>data</code> is writer-dependent.</p>
+</li>
+</ol>
+<p>A writer is totally free to specify what is a valid <code>data</code>,
+but it is sensible to accept:</p>
+<ul>
+<li>
+<p>instances of a reference data type (or some of these instances),</p>
+</li>
+<li>
+<p>data that can be safely converted to the reference data type,</p>
+</li>
+<li>
+<p>sequences (lists, arrays, etc.) of the reference type (or assimilated).</p>
+</li>
+</ul>
+<p>A writer should raise an exception (<code>ValueError</code> or <code>TypeError</code>) 
+when the data is invalid.</p>
+<hr />
+<p>To write unsigned integers as binary numbers for example,
+we can consider as valid anything any non-negative integer-like
+data (defined as anything that the constructor <code>int</code> accepts) 
+as well as lists of such data.</p>
+<pre><code>&gt;&gt;&gt; def write_uint(stream, data):
+...     if isinstance(data, list):
+...         for integer in data:
+...             write_uint(stream, integer)
+...     else:
+...         integer = int(data)
+...         if integer &lt; 0:
+...             error = "negative integers cannot be encoded"
+...             raise ValueError(error)
+...         bools = []
+...         while integer:
+...             bools.append(integer &amp; 1)
+...             integer = integer &gt;&gt; 1
+...         bools.reverse()
+...         stream.write(bools, bool)
+</code></pre>
+<p>This writer behaves as expected:</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; write_uint(stream, 42)
+&gt;&gt;&gt; stream
+101010
+&gt;&gt;&gt; write_uint(stream, [1, 2, 3])
+&gt;&gt;&gt; stream
+10101011011
+&gt;&gt;&gt; write_uint(stream, -1)
+Traceback (most recent call last):
+...
+ValueError: negative integers cannot be encoded
+&gt;&gt;&gt; write_uint(stream, {}) # doctest: +ELLIPSIS
+Traceback (most recent call last):
+...
+TypeError: int() argument must be ..., not 'dict'
+</code></pre>
+<hr />
+<p>The signature of readers is:</p>
+<pre><code>def reader(stream, n=None)
+</code></pre>
+<p>where</p>
+<ul>
+<li>
+<p><code>stream</code> is a <code>BitStream</code> instance,</p>
+</li>
+<li>
+<p><code>n</code> is a non-negative integer (or <code>None</code>).</p>
+</li>
+</ul>
+<p>The call <code>read(stream, n)</code> should read <code>n</code> data items 
+out of <code>stream</code> when <code>n</code> is an integer. 
+However, bitstream does not require a specific type of container 
+(list, array, string, etc.), the choice is all yours;
+for consistency however, you should pick a type of container
+that your writer supports.</p>
+<p>The semantics of call <code>read(stream)</code> (when <code>n=None</code>) is up to you; 
+for most of built-in types, it returns a single (unboxed) datum of
+the stream but there are sometimes good reasons to decide otherwise
+(see for example <a href="../types/#strings">strings</a>).
+The support for this default case is not mandatory.</p>
+<p>Actually, readers may support only a subset of the possible values of <code>n</code>;
+for example they may allow only <code>n=1</code> and <code>n=None</code>.
+If a reader is called with an invalid value of <code>n</code>,
+a <code>ValueError</code> or <code>TypeError</code> exception should be raised. 
+If instead the <code>read</code> fails because there is not enough 
+data in the stream or more generally if the binary data
+cannot be decoded, a <code>ReadError</code> (from <code>bitstream</code>) should 
+be raised.</p>
+<hr />
+<p>When we represent unsigned integers as binary numbers,
+while we can write multiple integers in the same stream,
+we cannot read unambiguously multiple integers from the 
+stream: the code is not <em>self-delimiting</em>. 
+For example <code>110</code> can be split as <code>1</code> then <code>10</code>
+and code for the integers <code>1</code> and <code>2</code> but also 
+as <code>11</code> and <code>0</code> which represent the integers <code>3</code> and <code>0</code>.</p>
+<p>Thus, we design a reader that reads the whole stream as a single 
+integer: we support only the cases <code>n=1</code> 
+and for convenience the default <code>n=None</code> with the same result.</p>
+<p>A possible implementation of this reader is:</p>
+<pre><code>&gt;&gt;&gt; def read_uint(stream, n=None):
+...     if n is not None and not n == 1:
+...         error = "unsupported argument n = {0!r}".format(n)
+...         raise ValueError(error)
+...     else:
+...         integer = 0
+...         for _ in range(len(stream)):
+...             integer = integer &lt;&lt; 1
+...             if stream.read(bool):
+...                 integer += 1
+...     return integer
+</code></pre>
+<p>It behaves as expected:</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; write_uint(stream, 42)
+&gt;&gt;&gt; read_uint(stream)
+42
+&gt;&gt;&gt; write_uint(stream, [1, 2, 3]) 
+&gt;&gt;&gt; read_uint(stream)
+27
+&gt;&gt;&gt; len(stream)
+0
+&gt;&gt;&gt; write_uint(stream, 42)
+&gt;&gt;&gt; read_uint(stream, 1)
+42
+&gt;&gt;&gt; write_uint(stream, 42)
+&gt;&gt;&gt; read_uint(stream, 2)
+Traceback (most recent call last):
+...
+ValueError: unsupported argument n = 2
+</code></pre>
+<h2 id="registration">Registration<a class="headerlink" href="#registration" title="Permanent link">&para;</a></h2>
+<p>To fully integrate unsigned integers into bitstream, 
+you need to associate a unique type identifier to 
+the reader and/or writer, 
+This type identifier is usually a type;
+a user-defined type with an empty 
+definition will do:</p>
+<pre><code>&gt;&gt;&gt; class uint(object):
+...     pass
+</code></pre>
+<p>Once the type <code>uint</code> has been associated to the unsigned integer writer</p>
+<pre><code>&gt;&gt;&gt; bitstream.register(uint, writer=write_uint)
+</code></pre>
+<p>we can use the <code>write</code> method of <code>BitStream</code> to encode unsigned integers</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write(42, uint)
+&gt;&gt;&gt; stream
+101010
+
+&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; stream.write([2, 2, 2], uint)
+&gt;&gt;&gt; stream
+101010
+</code></pre>
+<p>and also the shorter former using the <code>BitStream</code> constructor</p>
+<pre><code>&gt;&gt;&gt; BitStream(42, uint)
+101010
+&gt;&gt;&gt; BitStream([2, 2, 2], uint)
+101010
+</code></pre>
+<p>Once the reader is registered</p>
+<pre><code>&gt;&gt;&gt; bitstream.register(uint, reader=read_uint)
+</code></pre>
+<p>we can also use the <code>read</code> method of <code>BitStream</code>:</p>
+<pre><code>&gt;&gt;&gt; BitStream(42, uint).read(uint)
+42
+</code></pre>
+<p>Here, the <code>uint</code> type was merely an identifier for our reader and writer,
+but "real" types can be used too. If you write some data whose type is
+the type identifier of a writer, you don't need to specify explicitly the
+type identifier in writes.</p>
+<p>For example, if we also associate our writer with Python integers:</p>
+<pre><code>&gt;&gt;&gt; bitstream.register(int, writer=write_uint)
+&gt;&gt;&gt; if sys.version_info[0] == 2: # Python 2 has a 'long integer' type
+...     bitstream.register(long, writer=write_uint)
+</code></pre>
+<p>then every Python integer will be automatically encoded with 
+the <code>write_uint</code> writer</p>
+<pre><code>&gt;&gt;&gt; BitStream(42)
+101010
+&gt;&gt;&gt; BitStream([2, 2, 2])
+101010
+</code></pre>
+<h2 id="factories">Factories<a class="headerlink" href="#factories" title="Permanent link">&para;</a></h2>
+<p>The coding of arbitrary unsigned integers as binary numbers 
+doesn't allow us to represent unambiguously multiple numbers in a stream. However, if there is a known bound on the integers we use, we can
+assign a sufficient numbers of bits to each integer, pad the
+binary numbers with enough zeros of the left to use the same
+number of bits and this code is self-delimiting.</p>
+<p>However, to do that, we would have to define and register a new writer 
+for every possible number of bits. 
+Instead, we may register a single but configurable writer, defined
+by a writer factory.</p>
+<p>Let's define a type identifier factory <code>uint</code> whose instances 
+hold a number of bits:</p>
+<pre><code>&gt;&gt;&gt; class uint(object):
+...     def __init__(self, num_bits):
+...         self.num_bits = num_bits
+</code></pre>
+<p>Then, we define a writer factory: given an instance of <code>uint</code>, 
+it returns a stream writer:</p>
+<pre><code>&gt;&gt;&gt; def write_uint_factory(instance):
+...     num_bits = instance.num_bits
+...     def write_uint(stream, data):
+...         if isinstance(data, list):
+...             for integer in data:
+...                 write_uint(stream, integer)
+...         else:
+...             integer = int(data)
+...             if integer &lt; 0:
+...                 error = "negative integers cannot be encoded"
+...                 raise ValueError(error)
+...             bools = []
+...             for _ in range(num_bits):
+...                 bools.append(integer &amp; 1)
+...                 integer = integer &gt;&gt; 1
+...             bools.reverse()
+...             stream.write(bools, bool)
+...     return write_uint
+</code></pre>
+<p>Finally, we register this writer factory with <code>bitstream</code>:</p>
+<pre><code>&gt;&gt;&gt; bitstream.register(uint, writer=write_uint_factory)
+</code></pre>
+<p>To select a writer, we use the appropriate type identifier:</p>
+<pre><code>&gt;&gt;&gt; BitStream(255, uint(8))
+11111111
+&gt;&gt;&gt; BitStream(255, uint(16))
+0000000011111111
+&gt;&gt;&gt; BitStream(42, uint(8))
+00101010
+&gt;&gt;&gt; BitStream(0, uint(16))
+0000000000000000
+</code></pre>
+<p>The definition of a reader factory is similar:</p>
+<pre><code>&gt;&gt;&gt; def read_uint_factory(instance):
+...     num_bits = instance.num_bits
+...     def read_uint(stream, n=None):
+...         if n is None:
+...             integer = 0
+...             for _ in range(num_bits):
+...                 integer = integer &lt;&lt; 1
+...                 if stream.read(bool):
+...                     integer += 1
+...             return integer
+...         else:
+...             integers = [read_uint(stream) for _ in range(n)]
+...             return integers
+...     return read_uint
+</code></pre>
+<p>Once the reader factory is registered</p>
+<pre><code>&gt;&gt;&gt; bitstream.register(uint, reader=read_uint_factory)
+</code></pre>
+<p>we can use the family of type identifiers in reads too:</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream([0, 1, 2, 3, 4], uint(8))
+&gt;&gt;&gt; stream.read(uint(8))
+0
+&gt;&gt;&gt; stream.read(uint(8), 1)
+[1]
+&gt;&gt;&gt; stream.read(uint(8), 3)
+[2, 3, 4]
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../types/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Built-in Types
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../snapshots/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Snapshots
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,31 @@
+site_name: BitStream
+
+docs_dir: mkdocs
+
+site_dir: docs
+
+pages:
+  - Overview: index.md
+  - Examples: examples.md
+  - Installation: installation.md
+  - Built-in Types: types.md
+  - Custom Types: custom.md
+  - Snapshots: snapshots.md
+  - API Reference: API.md
+  - Contributing: contributing.md
+
+theme: "material" 
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+
+repo_name: "bitstream"
+repo_url: "https://github.com/boisgera/bitstream"
+edit_uri: edit/master/mkdocs/
+
+

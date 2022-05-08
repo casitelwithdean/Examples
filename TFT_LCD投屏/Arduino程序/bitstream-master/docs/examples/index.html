@@ -1,0 +1,688 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Examples - BitStream</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#examples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="BitStream" class="md-header-nav__button md-logo" aria-label="BitStream">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            BitStream
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Examples
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/boisgera/bitstream/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bitstream
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BitStream" class="md-nav__button md-logo" aria-label="BitStream">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    BitStream
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/boisgera/bitstream/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bitstream
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Examples
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spoon" class="md-nav__link">
+    Spoon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wave" class="md-nav__link">
+    Wave
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../types/" class="md-nav__link">
+      Built-in Types
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../custom/" class="md-nav__link">
+      Custom Types
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../snapshots/" class="md-nav__link">
+      Snapshots
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../API/" class="md-nav__link">
+      API Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spoon" class="md-nav__link">
+    Spoon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wave" class="md-nav__link">
+    Wave
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/boisgera/bitstream/edit/master/mkdocs/examples.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
+<p>We provide the following examples of bitstream usage:</p>
+<ul>
+<li>
+<p><a href="#spoon">Spoon</a>: build a translator between Brainfuck programs and Spoon
+    programs.</p>
+</li>
+<li>
+<p><a href="#wave">Wave</a>: synthesize a pure tone and generate the corresponding
+    WAVE audio file.</p>
+</li>
+</ul>
+<p>But first, as usual, let's start with</p>
+<pre><code>&gt;&gt;&gt; from bitstream import BitStream
+</code></pre>
+<h2 id="spoon">Spoon<a class="headerlink" href="#spoon" title="Permanent link">&para;</a></h2>
+<p><a href="https://esolangs.org/wiki/Spoon">Spoon</a> is a derivative of the <a href="https://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a> programming language.
+Instead of the 8 ASCII symbols used by Brainfuck, it relies on
+binary sequences to represent each instruction. </p>
+<p>The source of the "Hello World!" program in Brainfuck is<sup id="fnref:dtm"><a class="footnote-ref" href="#fn:dtm">1</a></sup>:</p>
+<pre><code>&gt;&gt;&gt; hello_world = "++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.&gt;.+++.------.--------.&gt;+.&gt;."
+</code></pre>
+<p>The conversion between Brainfuck and Spoon is given by the table:</p>
+<pre><code>&gt;&gt;&gt; spoon = {
+...   "+": "1",
+...   "-": "000",
+...   "&gt;": "010",
+...   "&lt;": "011",
+...   "[": "00100",
+...   "]": "0011",
+...   ".": "001010",
+...   ",": "0010110",
+... }
+</code></pre>
+<p>You may notice that the binary codes that correspond to symbols that frequently
+appear in the <code>hello_world</code> program (such as <code>+</code>) are shorter than the others,
+a nice property since it generates a compact representation of Spoon programs<sup id="fnref:nac"><a class="footnote-ref" href="#fn:nac">2</a></sup>.</p>
+<p>To create a bitstream that contains the Spoon translation of <code>hello_world</code>,
+we may for each symbol in this program find the corresponding binary code 
+in the <code>spoon</code> table, transform it into a list of bools and append this data 
+to the stream.</p>
+<pre><code>&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; for symbol in hello_world:
+...     code = spoon[symbol]
+...     code_as_bools = [bool(int(char)) for char in code]
+...     stream.write(code_as_bools)
+</code></pre>
+<p>Here is the result:</p>
+<pre><code>&gt;&gt;&gt; stream
+11111111110010001011111110101111111111010111010101101101101100000110101100101001010010101111111001010001010111001010010110010100110111111111111111110010100100010101110010100000000000000000000010100000000000000000000000000010100101001010010001010
+&gt;&gt;&gt; len(hello_world) * 8
+888
+&gt;&gt;&gt; len(stream)
+245
+</code></pre>
+<p>We now have of program of 245 bits instead of the 888 bits 
+(111 bytes) of the original ASCII program. Not bad ...</p>
+<hr />
+<p>It's also pretty easy to perform the opposite operation, to translate Spoon into
+Brainfuck. First, we can compute <code>noops</code>, the inverse of the <code>spoon</code> dictionary.</p>
+<pre><code>&gt;&gt;&gt; noops = {}
+&gt;&gt;&gt; for symbol, code in spoon.items():
+...     noops[code] = symbol
+&gt;&gt;&gt; n = max(len(code) for code in noops)
+</code></pre>
+<p>Then we read bits one by one from the stream into a buffer and look at each 
+stage if the buffer corresponds to a key in <code>noops</code>, translate this code,
+empty the buffer and start again<sup id="fnref:pfc"><a class="footnote-ref" href="#fn:pfc">3</a></sup>.</p>
+<pre><code>&gt;&gt;&gt; src = ""
+&gt;&gt;&gt; buffer = BitStream()
+&gt;&gt;&gt; while len(stream) &gt; 0:
+...     if len(buffer) &gt; n:
+...         raise ValueError("invalid Spoon bitstream")
+...     else:
+...         buffer.write(stream.read(bool))
+...         try:
+...             src += noops[str(buffer)]
+...             buffer = BitStream()
+...         except KeyError:
+...             pass
+&gt;&gt;&gt; if len(buffer) &gt; 0: # should be empty by now
+...     raise ValueError("invalid Spoon bitstream")
+</code></pre>
+<p>We can then check that <code>src</code> and <code>hello_world</code> are the same program:</p>
+<pre><code>&gt;&gt;&gt; src == hello_world
+True
+</code></pre>
+<h2 id="wave">Wave<a class="headerlink" href="#wave" title="Permanent link">&para;</a></h2>
+<p>What does it take to play a pure tone?
+The synthesis of the data is quite easy: in the realm of digital audio,
+sounds are just numbers and NumPy is up to the task.
+The painful, low-level part of the process is to actually generate an
+audio file in a format that your computer does understand. 
+Fortunately, this is where bitstream can help<sup id="fnref:r"><a class="footnote-ref" href="#fn:r">4</a></sup>.</p>
+<p>Most of the audio file formats that you may know (MP3, AAC, FLAC, ALAC, etc.)
+use compression to reduce file size; unfortunately
+this feature leads to rather complex formats. 
+Therefore, we are going to output <a href="https://en.wikipedia.org/wiki/WAV">WAVE</a> 
+files instead, which are typically uncompressed.</p>
+<p>The <a href="http://soundfile.sapp.org/doc/WaveFormat/">WAVE PCM soundfile format</a> webpage<sup id="fnref:cs"><a class="footnote-ref" href="#fn:cs">5</a></sup> is a great source of information
+about the format. We will use it to design our code; please have a look at it!
+Here is its high-level description:</p>
+<blockquote>
+<p>The WAVE file format is a subset of Microsoft's RIFF specification for the 
+storage of multimedia files. 
+A RIFF file starts out with a file header followed by a sequence of data 
+chunks. 
+A WAVE file is often just a RIFF file with a single "WAVE" chunk which 
+consists of two sub-chunks -- a "fmt " chunk specifying the data format 
+and a "data" chunk containing the actual sample data. </p>
+</blockquote>
+<p>First, we import NumPy (and globally the integer types that we need).</p>
+<pre><code>&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from numpy import uint8, uint16, uint32, int16
+</code></pre>
+<p>We use NumPy to produce 3 seconds of a pure tone with frequency 440 Hz
+(A4) at a sampling rate of 44.1 kHz 
+(the audio CD standard).</p>
+<pre><code>&gt;&gt;&gt; # Generate a waveform (pure tone)
+&gt;&gt;&gt; df = 44100
+&gt;&gt;&gt; dt = 1.0 / df
+&gt;&gt;&gt; T = 3.0
+&gt;&gt;&gt; t = np.r_[0.0:T:dt]
+&gt;&gt;&gt; f = 440.0
+&gt;&gt;&gt; data = np.sin(2 * np.pi * f * t)
+</code></pre>
+<p>In this description, every sample is a floating-point number that requires 
+64 bits. The typical WAVE file requires 16-bit integer data instead, so we
+perform the (lossy) conversion:</p>
+<pre><code>&gt;&gt;&gt; # Quantize the floating-point data
+&gt;&gt;&gt; ones_ = np.ones_like(data)
+&gt;&gt;&gt; low  = (-2**15    ) * ones_
+&gt;&gt;&gt; high = ( 2**15 - 1) * ones_
+&gt;&gt;&gt; data = np.clip(2**15 * data, low, high)
+&gt;&gt;&gt; data = np.round(data).astype(np.int16)
+</code></pre>
+<p>Since WAVE files use a <a href="https://en.wikipedia.org/wiki/Endianness">little-endian</a>
+representation every numeric value
+and since bitstream is <a href="https://en.wikipedia.org/wiki/Endianness">big-endian</a>
+by default, we define a small function to
+help us perform the change automatically, using the <code>newbyteorder</code> 
+method of NumPy.</p>
+<pre><code>&gt;&gt;&gt; # Stream endianness helper 
+&gt;&gt;&gt; stream = BitStream()
+&gt;&gt;&gt; def write(datum, type=None):
+...     if type and issubclass(type, np.integer):
+...         datum = type(datum).newbyteorder()
+...     stream.write(datum, type)
+</code></pre>
+<p>The rest of the work is a straightforward translation of the 
+<a href="http://soundfile.sapp.org/doc/WaveFormat/">specification</a>: first we write the main chunk</p>
+<pre><code>&gt;&gt;&gt; # "RIFF" Chunk Descriptor
+&gt;&gt;&gt; chunk_size = 36 + 2 * len(data)  # size of the chunk after "RIFF"
+&gt;&gt;&gt; 
+&gt;&gt;&gt; write(b"RIFF"           )
+&gt;&gt;&gt; write(chunk_size, uint32)
+&gt;&gt;&gt; write(b"WAVE"           )
+</code></pre>
+<p>then the format subchunk</p>
+<pre><code>&gt;&gt;&gt; # "fmt" SubChunk
+&gt;&gt;&gt; subchunk1_size  = 16      # size in bytes of the subchunk after "fmt " 
+&gt;&gt;&gt; audio_format    = 1       # PCM data
+&gt;&gt;&gt; num_channels    = 1       # mono
+&gt;&gt;&gt; byte_rate       = 2 * df
+&gt;&gt;&gt; block_align     = 2       # number of bytes for one sample (all channels)
+&gt;&gt;&gt; bits_per_sample = 16
+&gt;&gt;&gt; 
+&gt;&gt;&gt; write(b"fmt "                )
+&gt;&gt;&gt; write(subchunk1_size , uint32)
+&gt;&gt;&gt; write(audio_format   , uint16)
+&gt;&gt;&gt; write(num_channels   , uint16)
+&gt;&gt;&gt; write(df             , uint32)
+&gt;&gt;&gt; write(byte_rate      , uint32)
+&gt;&gt;&gt; write(block_align    , uint16)
+&gt;&gt;&gt; write(bits_per_sample, uint16)
+</code></pre>
+<p>and finally the data subchunk</p>
+<pre><code>&gt;&gt;&gt; # "data" SubChunk
+&gt;&gt;&gt; subchunk2_size = 2 * len(data)  # size in bytes of the subchunk after "data"
+&gt;&gt;&gt;  
+&gt;&gt;&gt; write(b"data"               )
+&gt;&gt;&gt; write(subchunk2_size, uint32)
+&gt;&gt;&gt; write(data          ,  int16)
+</code></pre>
+<p>and that's it! <code>stream</code> holds the content of our WAVE file;
+all we have to do is to read it as a string that we write into an 
+actual file.</p>
+<pre><code>&gt;&gt;&gt; # Generate the WAVE file
+&gt;&gt;&gt; wave_bytes = stream.read(bytes)
+&gt;&gt;&gt; wave_file = open("output.wav", "wb")
+&gt;&gt;&gt; _ = wave_file.write(wave_bytes)
+</code></pre>
+<p>You can now listen to the sound in <code>output.wav</code> with your favorite music player.</p>
+<p>For the sake of consistency, let's make sure that you and I have the same 
+contents:</p>
+<pre><code>&gt;&gt;&gt; import hashlib
+&gt;&gt;&gt; m = hashlib.md5()
+&gt;&gt;&gt; m.update(wave_bytes)
+&gt;&gt;&gt; m.digest() # doctest: +BYTES
+b'\xb0\xcf\x0e8\x150\x1fV \x86\x9e2\xdf\xfb\x1d\xec'
+</code></pre>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dtm">
+<p>You don't have to trust me on this, you may try this code online at <a href="https://copy.sh/brainfuck/">https://copy.sh/brainfuck/</a>.&#160;<a class="footnote-backref" href="#fnref:dtm" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:nac">
+<p>This is not a coincidence: Spoon has been designed as 
+a <a href="https://en.wikipedia.org/wiki/Huffman_coding">Huffman code</a>
+based on the analysis of a representative collection of Brainfuck programs.&#160;<a class="footnote-backref" href="#fnref:nac" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pfc">
+<p>This approach -- without any lookahead -- is safe here because 
+    this code is <a href="https://en.wikipedia.org/wiki/Prefix_code">prefix-free</a>.&#160;<a class="footnote-backref" href="#fnref:pfc" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:r">
+<p>Of course, there is a module in the Python standard library to
+<a href="https://docs.python.org/2/library/wave.html">read and write WAV files</a>.
+We just pretend that we're in the mood to reinvent this wheel and learn
+something in the process.&#160;<a class="footnote-backref" href="#fnref:r" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:cs">
+<p>by <a href="mailto:craig@ccrma.stanford.edu">Craig Sapp</a> from the
+   <a href="https://ccrma.stanford.edu/">Center for Computer Research in Music and Acoustics</a>:&#160;<a class="footnote-backref" href="#fnref:cs" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../installation/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Installation
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
