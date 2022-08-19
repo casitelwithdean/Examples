@@ -66,15 +66,20 @@ void clientReconnect()
     }
   }
 }
+float latitude=1.12;
+float longitude=2.56;
+
 //mqtt发布post消息(上传数据)
 void mqttPublish()
 {
   if (mqttClient.connected())
   {
     //先拼接出json字符串
-    char param[32];
+    char param[69];
     char jsonBuf[128];
-    sprintf(param, "{\"LightSwitch\":%d}", digitalRead(LED_B)); //我们把要上传的数据写在param里
+        sprintf(param, "{\"GeoLocation\":\"latitude\":%2f,\"longitude\":%2f}", latitude,longitude);
+
+//    sprintf(param, "{\"LightSwitch\":%d}", 1); //我们把要上传的数据写在param里
     postMsgId += 1;
     sprintf(jsonBuf, ALINK_BODY_FORMAT, postMsgId, ALINK_METHOD_PROP_POST, param);
     //再从mqtt客户端中发布post消息
