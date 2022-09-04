@@ -7,11 +7,11 @@
 #include "Ticker.h"
 
 #define WIFI_SSID "HONOR30"       //wifi名
-#define WIFI_PASSWD "123456789" //wifi密码
+#define WIFI_PASSWD "12345678" //wifi密码
 
-#define PRODUCT_KEY "a1ChnvnTw4u"                        //产品ID
-#define DEVICE_NAME "esp32"                     //设备名
-#define DEVICE_SECRET "d73ca15f238efa500603eefbc9347d0e" //设备key
+#define PRODUCT_KEY "hjl55arecmr"                        //产品ID
+#define DEVICE_NAME "esp32_test"                     //设备名
+#define DEVICE_SECRET "36aec03899066418063dd2345d43bf9d" //设备key
 
 //设备下发命令的set主题
 #define ALINK_TOPIC_PROP_SET "/sys/" PRODUCT_KEY "/" DEVICE_NAME "/thing/service/property/set"
@@ -114,14 +114,18 @@ void callback(char *topic, byte *payload, unsigned int length)
       Serial.println("parse json failed");
       return;
     }
+    
     JsonObject setAlinkMsgObj = doc.as<JsonObject>();
     serializeJsonPretty(setAlinkMsgObj, Serial);
     Serial.println();
 
     //这里是一个点灯小逻辑
-    int lightSwitch = setAlinkMsgObj["params"]["LightSwitch"];
+    int lightSwitch = setAlinkMsgObj["params"]["light"];
     digitalWrite(LED_B, lightSwitch);
-    mqttPublish(); //由于将来做应用可能要获取灯的状态,所以在这里发布一下
+    Serial.println(lightSwitch);
+    Serial.println(lightSwitch);
+    Serial.println(lightSwitch);
+   // mqttPublish(); //由于将来做应用可能要获取灯的状态,所以在这里发布一下
   }
 }
 
@@ -135,7 +139,7 @@ void setup()
     Serial.println("MQTT服务器连接成功!");
   };
   mqttClient.setCallback(callback); //绑定收到set主题时的回调(命令下发回调)
-  tim1.attach(5, mqttPublish);      //启动每5秒发布一次消息
+//  tim1.attach(5, mqttPublish);      //启动每5秒发布一次消息
 }
 
 void loop()
@@ -157,4 +161,5 @@ void loop()
 
   //mqtt客户端监听
   mqttClient.loop();
+  delay(5000);
 }
