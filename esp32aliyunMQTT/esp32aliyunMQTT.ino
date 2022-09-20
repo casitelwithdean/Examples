@@ -97,6 +97,7 @@ void mqttPublish()
 //收到set主题的命令下发时的回调函数,(接收命令)
 void callback(char *topic, byte *payload, unsigned int length)
 {
+  Serial.println("試試");
   if (strstr(topic, ALINK_TOPIC_PROP_SET))
   //如果收到的主题里包含字符串ALINK_TOPIC_PROP_SET(也就是收到/sys/a17lGhkKwXs/esp32LightHome/thing/service/property/set主题)
   {
@@ -107,25 +108,26 @@ void callback(char *topic, byte *payload, unsigned int length)
     Serial.println((char *)payload);
 
     //接下来是收到的json字符串的解析
-    DynamicJsonDocument doc(100);
-    DeserializationError error = deserializeJson(doc, payload);
-    if (error)
-    {
-      Serial.println("parse json failed");
-      return;
-    }
-    
-    JsonObject setAlinkMsgObj = doc.as<JsonObject>();
-    serializeJsonPretty(setAlinkMsgObj, Serial);
-    Serial.println();
+  StaticJsonDocument<400> doc;
+  DeserializationError error = deserializeJson(doc,payload);
+  if (error) {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(error.f_str());
+    return;
+  }
+   Serial.println((const char*)doc["params"]["light"]);
 
+   Serial.println(doc["params"]["light"]);
+if(doc["params"]["light"])
+{
     //这里是一个点灯小逻辑
-    int lightSwitch = setAlinkMsgObj["params"]["light"];
+    int lightSwitch =(int) doc["params"]["light"];
     digitalWrite(LED_B, lightSwitch);
-    Serial.println(lightSwitch);
+   
     Serial.println(lightSwitch);
     Serial.println(lightSwitch);
    // mqttPublish(); //由于将来做应用可能要获取灯的状态,所以在这里发布一下
+  }
   }
 }
 
@@ -161,5 +163,5 @@ void loop()
 
   //mqtt客户端监听
   mqttClient.loop();
-  delay(5000);
+
 }
