@@ -663,11 +663,7 @@ static void show(spi_device_handle_t spi, uint8_t *x_start, uint8_t *x_end)
     lcd_data(spi, x_start, 1);
     lcd_data(spi, st_init_cmds[0].data, 1);
     lcd_data(spi, x_end, 1);
-    // uint16_t white[1660]={0xffff};
-    //   lcd_cmd(spi, 0x2c);
-    //   for (int y=0; y<1660; y+=PARALLEL_LINES) {
-    //        lcd_data(spi,white,1);
-    // }
+
 }
 
 static void display_pretty_colors(spi_device_handle_t spi)
@@ -697,7 +693,7 @@ static void display_pretty_colors(spi_device_handle_t spi)
     //       lcd_cmd(spi, 0x2c);
     //       for (int y=0; y<1660; y+=PARALLEL_LINES) {
     //            lcd_data(spi,white,1);
-    // }
+    // }//这是最原始的写法
 }
 
 void app_main(void)
