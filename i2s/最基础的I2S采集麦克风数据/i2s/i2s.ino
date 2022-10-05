@@ -28,10 +28,10 @@ void setup() {
 
   // The pin config as per the setup
   const i2s_pin_config_t pin_config = {
-      .bck_io_num = 41,   // Serial Clock (SCK)
-      .ws_io_num = 42,    // Word Select (WS)
+      .bck_io_num = 21,   // Serial Clock (SCK)
+      .ws_io_num = 22,    // Word Select (WS)
       .data_out_num = I2S_PIN_NO_CHANGE, // not used (only for speakers)
-      .data_in_num = 9   // Serial Data (SD)
+      .data_in_num = 23   // Serial Data (SD)
   };
 
   // Configuring the I2S driver and pins.
